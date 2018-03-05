@@ -1,0 +1,22 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+ '(truncate-lines t))
+
+(add-to-list 'load-path "~/.emacs.d/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/run/current-system/sw/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+
+(require 'asm-mode)
+(add-hook
+ 'asm-mode-hook
+ (lambda () (electric-indent-mode -1)))
+
+(define-key asm-mode-map (kbd "RET") 'newline)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
