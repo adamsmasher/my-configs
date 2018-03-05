@@ -1,0 +1,4 @@
+A repo to store my favourite config settings.
+
+It looks like fontconfig won't follow symlinks,
+so that one has to be copied? Bummer.
