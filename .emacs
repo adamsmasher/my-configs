@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (magit paredit slime)))
  '(truncate-lines t))
 
 (require 'package)
