@@ -6,6 +6,10 @@
  '(inhibit-startup-screen t)
  '(truncate-lines t))
 
+(require 'package)
+(add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/")  t)
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/slime")
 (require 'slime-autoloads)
 (setq inferior-lisp-program "/run/current-system/sw/bin/sbcl")
