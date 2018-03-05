@@ -16,6 +16,14 @@
 (setq inferior-lisp-program "/run/current-system/sw/bin/sbcl")
 (setq slime-contribs '(slime-fancy))
 
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(let ((mode-hooks '(emacs-lisp-mode-hook
+		    eval-expression-minibuffer-setup-hook
+		    lisp-mode-hook
+		    lisp-interaction-mode-hook)))
+  (dolist (mode-hook mode-hooks)
+    (add-hook mode-hook #'enable-paredit-mode)))
+
 (require 'asm-mode)
 (add-hook
  'asm-mode-hook
