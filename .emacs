@@ -7,6 +7,9 @@
  '(package-selected-packages (quote (magit paredit slime)))
  '(truncate-lines t))
 
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
 (require 'package)
 (add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/")  t)
 (package-initialize)
